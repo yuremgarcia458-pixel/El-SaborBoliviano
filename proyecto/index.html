@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabores de Bolivia</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+
+<div class="bandera">
+<div class="verde"></div>
+<div class="amarillo"></div>
+<div class="rojo"></div>
+</div>
+
+<header>
+<header id="inicio"></header>
+<img src="png/logo.png" alt="Logo" class="logo">
+
+<h1>🍽 EL SABOR BOLIVIANO </h1>
+
+<p>
+Descubre los platos tipicos de los nueve departamentos del Bolivia
+Cada plato refleja la historia, cultura y tradición de su región.
+</p>
+
+<button class="btn" onclick="document.querySelector('header').style.display='none'; document.getElementById('platos').style.display='block'; window.scrollTo(0,0);">
+    Explorar
+</button>
+</header>
+
+<section id="platos" style="display:none;">
+
+<h2 class="titulo">Los 9 Departamentos y sus Platos Típicos</h2>
+
+<div class="grid">
+
+<!-- La Paz -->
+<div class="card" onclick="mostrarPlato('lapaz')">
+<img src="png/la paz.jpg" alt="">
+<div class="card-content">
+<h2>🏔 La Paz</h2>
+<h3>Plato:</h3>
+<p><b>Plato Paceño</b></p>
+<p>Delicioso plato que contiene, avas, papa, carne, queso, choclo y su rica llajwua.</p>
+</div>
+</div>
+
+<!-- Oruro -->
+<div class="card" onclick="mostrarPlato('oruro')">
+<img src="png/oruro.png" alt="">
+<div class="card-content">
+<h2>⚒ Oruro</h2>
+<h3>Plato:</h3>
+<p><b>Charquekan</b></p>
+<p>Carne de llama deshidratada acompañada con mote, papa, huevo y queso.</p>
+</div>
+</div>
+
+<!-- Potosí -->
+<div class="card" onclick="mostrarPlato('potosi')">
+<img src="png/potosi.png" alt="">
+<div class="card-content">
+<h2>⛰ Potosí</h2>
+<h3>Plato:</h3>
+<p><b>Kalapurka</b></p>
+<p>Sopa espesa y caliente preparada con maíz, carne y ají. Tradicionalmente se sirve muy caliente y se caracteriza por su sabor intenso./p>
+</div>
+</div>
+
+<!-- Cochabamba -->
+<div class="card" onclick="mostrarPlato('cochabamba')">
+<img src="png/cochabamca.png" alt="">
+<div class="card-content">
+<h2>🌿 Cochabamba</h2>
+<h3>Plato:</h3>
+<p><b>Pique Macho</b></p>
+<p>Carne, salchicha, papas fritas, huevo y locoto. Uno de los platos más famosos de Bolivia.</p>
+</div>
+</div>
+
+<!-- Santa Cruz -->
+<div class="card" onclick="mostrarPlato('santacruz')">
+<img src="png/santa cruz.png" alt="">
+<div class="card-content">
+<h2>🌴 Santa Cruz</h2>
+<h3>Plato:</h3>
+<p><b>Masaco de platano</b></p>
+<p>Se prepara aplastando plátano cocido o frito. Es un alimento tradicional de la región amazónica y oriental.</p>
+</div>
+</div>
+
+<!-- Beni -->
+<div class="card" onclick="mostrarPlato('beni')">
+<img src="png/beni.png" alt="">
+<div class="card-content">
+<h2>🐊 Beni</h2>
+<h3>Plato:</h3>
+<p><b>Majadito beniano</b></p>
+<p>Arroz con charque o pato, huevo frito y plátano maduro.</p>
+</div>
+</div>
+
+<!-- Pando -->
+<div class="card" onclick="mostrarPlato('pando')">
+<img src="png/pando.jpg" alt="">
+<div class="card-content">
+<h2>🌳 Pando</h2>
+<h3>Plato:</h3>
+<p><b>Sudado de Surubí</b></p>
+<p>Plato elaborado con pescado de río, especialmente surubí, cocinado con tomate, cebolla y condimentos. Se acompaña normalmente con arroz o yuca.</p>
+</div>
+</div>
+
+<!-- Tarija -->
+<div class="card" onclick="mostrarPlato('tarija')">
+<img src="png/tarija.jpg" alt="">
+<div class="card-content">
+<h2>🍇 Tarija</h2>
+<h3>Plato:</h3>
+<p><b>Saice Tarijeño</b></p>
+<p>Carne picada con ají rojo servida con arroz, papa y arvejas.</p>
+</div>
+</div>
+
+<!-- Chuquisaca -->
+<div class="card" onclick="mostrarPlato('chuquisaca')">
+<img src="png/chuquisaca.jpg" alt="">
+<div class="card-content">
+<h2>🏛 Chuquisaca</h2>
+<h3>Plato:</h3>
+<p><b>Mondongo Chuquisaqueño</b></p>
+<p>Cerdo cocinado con ají rojo acompañado de maíz blanco.</p>
+</div>
+</div>
+
+</div>
+
+<section class="compartir">
+
+    <h2>📲 Comparte EL SABOR BOLIVIANO</h2>
+
+    <p>¿Te gustó nuestra página? ¡Compártela con tus amigos!</p>
+
+    <div class="botones-compartir">
+
+        <button class="whatsapp" onclick="compartirWhatsApp()">
+            🟢 WhatsApp
+        </button>
+
+        <button class="facebook" onclick="compartirFacebook()">
+            🔵 Facebook
+        </button>
+
+        <button class="copiar" onclick="copiarEnlace()">
+            📋 Copiar enlace
+        </button>
+
+    </div>
+
+    <p id="mensaje-copiado"></p>
+
+</section>
+<section class="redes-sociales">
+
+    <h2>📱 Síguenos en nuestras redes</h2>
+
+    <p>
+        Conoce más sobre la gastronomía boliviana y acompáñanos en nuestras redes.
+    </p>
+
+    <div class="redes">
+
+        <a href="https://www.tiktok.com/@elsaborboliviano4"target="_blank" class="red tiktok">
+            🎵 TikTok
+        </a>
+
+        <a href="https://www.youtube.com/@ElsaborBoliviano_0ficial" target="_blank" class="red youtube">
+            ▶️ YouTube
+        </a>
+
+        <a href="https://www.instagram.com/elsaborboliviano_0ficial" target="_blank" class="red instagram">
+            📸 Instagram
+        </a>
+
+    </div>
+
+</section>
+
+</section>
+
+<section>
+
+<h2 class="titulo">❤️ ¿Por qué la comida boliviana es especial?</h2>
+
+<p style="text-align:center;font-size:20px;max-width:900px;margin:auto;line-height:2;">
+La gastronomía boliviana combina ingredientes andinos, amazónicos y del valle,
+creando sabores únicos que representan la diversidad cultural del país.
+Cada departamento tiene recetas tradicionales transmitidas de generación en generación.
+</p>
+
+</section>
+
+<footer>
+
+<h2>Bolivia, un país lleno de sabor.</h2>
+<p>- EL SABOR BOLIVIANO</p>
+
+</footer>
+
+<section id="lapaz" class="detalle">
+
+<button onclick="volver()">⬅ volver</button>
+
+<h1>🏔 Plato Paceño</h1>
+
+<img src="jpg/plato paceño 4.jpeg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<video controls>
+    <source src="mp4/video plato paceño.mp4" type="video/mp4">
+</video>
+
+
+<h2>🥩 Ingredientes</h2>
+
+<div class="">
+
+<div>2 libras (o ½ kilo) de carne de res</div>
+<div>4 choclos grandes y tiernos</div>
+<div>4 libras de papa imilla</div>
+<div>1 libra de habas verdes frescas con cáscara</div>
+<div>1 queso mediano criollo</div>
+<div>½ taza de aceite para freír</div>
+<div>1 pizca de comino molido</div>
+<div>1 pizca de pimienta negra.</div>
+<div>2 cucharadas adicionales de aceite</div>
+<div>2 cucharadas adicionales de salsa soya</div>
+<div>1 tomate mediano y maduro</div>
+<div>5 locotos verdes o rojos</div>
+<div>5 ramitas de quirquiña fresca</div>
+<div>1 pizca de sal</div>
+
+</div>
+
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+1. PREPARACION DEL CHOCLO: Quita los cabellos gruesos del choclo, Coloca los choclos en una olla profunda y cúbrelos con abundante agua fría, Pon la olla a fuego alto. Una vez que empiece a hervir, baja a fuego medio y cocina entre 25 a 35 minutos, hasta que los granos estén completamente tiernos.
+<br><br>
+
+2, PREPARACION DE LA PAPA: Lava muy bien las papas con agua corriente para eliminar toda la tierra, ya que se cocinan y sirven con su cáscara, pon las papas en una olla y cúbrelas con agua fría. Añade una cucharada de sal, cocina a fuego medio durante 20 a 30 minutos. Sabrás que están listas cuando las pinches con un cuchillo o tenedor y este entre con suavidad, o cuando la cáscara empiece a partirse ligeramente.
+
+<br><br>
+
+3. PREPARACION DE LA HABA: Lávalas bien. Se cocinan enteras, pero debes de cortar la parte superior e inferior de la haba para que lo del interior tenga una cocción perfecta y suave dentro de su vaina o cáscara verde. Colócalas en una olla con agua hirviendo y una pizca de sal. Déjalas hervir a fuego medio de 15 a 20 minutos. No te excedas de tiempo para que no se deshagan ni pierdan su color verde brillante.
+
+<br><br>
+
+4. PREPARACION DE LA CARNE: Condimenta los filetes de res con sal a gusto, una pisca depimienta, una pisca de comino, dos cucharillas de aceite, y dos cucharillas de salsa soya. Dejar reposar por 10 mn. para que agarre sabor. En una sartén con aceite bien caliente, fríe los filetes a fuego alto de 3 a 4 minutos por lado para sellar los jugos, logrando que queden dorados por fuera y blandos por dentro.
+
+<br><br>
+5. PREPARACION DEL QUESO: Corta el queso criollo en rebanadas rectangulares y gruesas (de aproximadamente 1.5 a 2 centímetros de espesor). Calienta media taza de aceite en una sartén a fuego medio-alto. Fríe las rebanadas de queso durante 1 a 2 minutos por lado, retirándolas apenas estén doradas y crujientes por fuera.
+
+<br><br>
+
+6. PREPARACION DE LA LLAJWUA: Tradicionalmente se muelen los ingredientes en un batán de piedra (o en su defecto, en una licuadora usando pulsos cortos).Proceso: Moler primero los locotos (con o sin semillas) junto con las hojas de quirquiña. Luego añade el tomate pelado y reduce todo a una salsa. Agrega sal al final.
+
+</p>
+
+
+<h2>📜 Historia</h2>
+
+<p>
+
+El Plato Paceño nació en La Paz durante el cerco de 1781, cuando la ciudad tuvo escasez de alimentos. Se preparó con productos del altiplano como papa, habas, choclo y queso. Con el paso del tiempo se convirtió en un plato tradicional y en un símbolo de la identidad y cultura paceña, representando la historia y las costumbres de la ciudad de La Paz.
+
+</p>
+
+
+</section>
+<section id="oruro" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Charquekan</h1>
+
+<img src="jpg/charquekan.jpg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<video controls>
+    <source src="mp4/video charquekan.mp4" type="video/mp4">
+</video>
+
+<h2>🥩 Ingredientes</h2>
+
+<div class="">
+
+<div>Charque: 100% (por ejemplo, 500g)</div>
+<div>>Mote de maíz: 80% (por ejemplo, 400g)</div>
+<div>Papas: 4 unidades (por ejemplo, 400g)</div>
+<div>Queso criollo: 40% (por ejemplo, 200g)</div>
+<div>div>Tomate: 1 unidad</div>
+<div>Locoto: 1 unidad</div>
+<div>Quirquiña: 1 ramita</div>
+<div>Aceite: Al gusto</div>
+<div>Sal: Al gusto</div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+LAVAR Y PREPARAR EL CHARQUE: Primero debemos lavar el charque con abundante agua para retirar el exceso de sal. Después, lo colocamos en una olla con agua limpia para comenzar su cocción.
+<br><br>
+COCINAR EL CHARQUE: Luego debemos cocinar el charque en una olla con agua hasta que esté suave. Este proceso ayuda a que la carne sea más fácil de desmenuzar.
+<br><br>
+DESMENUZAR Y FREÍR EL CHARQUE: Una vez cocido, retiramos el charque del agua, lo dejamos enfriar un poco y lo desmenuzamos en trozos pequeños. Después, lo freímos en una sartén con un poco de aceite hasta que quede dorado y crocante.
+<br><br>
+COCINAR LAS PAPAS Y EL MOTE: Mientras se prepara el charque, debemos lavar las papas y cocinarlas en agua hasta que estén blandas. De la misma manera, cocinamos el mote hasta que esté bien suave
+<br><br>
+PREPARAR LOS HUEVOS Y EL QUESO: Después debemos preparar los huevos, generalmente fritos, y cortar el queso en porciones adecuadas para acompañar el plato.
+<br><br>
+SERVIR EL PLATO: Finalmente, colocamos el charque frito junto con las papas, el mote, el huevo y el queso. De esta manera obtenemos el plato de charque listo para servir.
+<br><br>
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+Bajo el sol radiante de Oruro, una cocinera estira hilos de carne de llama deshidratada para freírlos hasta que queden perfectamente crujientes. En la gran olla de barro, los granos de mote blanco y las papas nativas se cocinan al vapor, inundando la cocina con un aroma ancestral. Al emplatar, corona la preparación con un huevo duro y una generosa rebanada de queso criollo frito que se derrite lentamente. Los comensales se reúnen alrededor de la mesa, mezclando cada bocado con una cucharada de llajua picante que despierta los sentidos. Esta herencia de los arrieros andinos transforma ingredientes simples en un festín dorado que celebra la resistencia y el sabor del altiplano boliviano.
+
+</p>
+
+</section>
+<section id="potosi" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Kalapurka</h1>
+
+<img src="jpg/charquekan.jpg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<video controls>
+    <source src="mp4/video charquekan.mp4" type="video/mp4">
+</video>
+
+<h2>🥩 Ingredientes</h2>
+
+<div class="">
+
+<div>500 g de carne de res o cordero.</div>
+<div>2 papas.</div> 
+<div>2 tazas de mote o maíz.</div>
+<div>3 cucharadas de ají colorado molido.</div>
+<div>1 cebolla.</div>
+<div>2 dientes de ajo.</div>
+<div>cucharadita de comino.</div>
+<div>1 cucharadita de orégano.</div>
+<div>Sal al gusto.</div>
+<div>2 cucharadas de aceite.</div>
+<div>2 litros de agua.</div>
+<div>2 a 3 piedras limpias resistentes al calor.</div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+LAVAR Y PREPARAR LOS INGREDIENTES: Primero debemos lavar muy bien la carne, las papas, el mote y las verduras que utilizaremos. También debemos preparar el ají y los demás condimentos para tenerlos listos.
+<br><br>
+COCINAR LA CARNE: Luego colocamos la carne en una olla con suficiente agua y la dejamos cocinar hasta que esté suave. Durante la cocción debemos retirar la espuma que se forme en la superficie
+<br><br>
+PREPARAR EL AJÍ Y LOS CONDIMENTOS: Después debemos preparar el ají colorado junto con la cebolla, el ajo, el comino y el orégano. Estos ingredientes ayudarán a darle a la kalapurca su sabor y color característicos.
+<br><br>
+COCINAR LAS PAPAS Y EL MOTE: Mientras se cocina la carne, debemos lavar las papas y cocinarlas hasta que estén blandas. También debemos cocinar el mote hasta que esté suave.
+<br><br>
+PREPARAR EL CALDO: Una vez que la carne esté cocida, agregamos al caldo el ají preparado y los demás condimentos. Dejamos cocinar todo junto para que los ingredientes se mezclen y el caldo tome buen sabor.
+<br><br>
+AÑADIR LAS PIEDRAS CALIENTES: La kalapurca se caracteriza por utilizar piedras calentadas al fuego. Con mucho cuidado y utilizando utensilios adecuados, se colocan las piedras calientes en el caldo para mantenerlo a una temperatura elevada.
+<br><br>
+SERVIR LA KALAPURCA: Finalmente, colocamos la carne, las papas y el mote en un plato y agregamos el caldo caliente. Servimos inmediatamente para disfrutar la kalapurca caliente.
+<br><br>
+
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+Conversación en el Modo IA: dame una historia de 5 lineas del plato charquekanDijiste: dame una historia de 5 lineas del plato charquekandame una historia de 5 lineas del plato charquekanBajo el sol radiante de Oruro, una cocinera estira hilos de carne de llama deshidratada para freírlos hasta que queden perfectamente crujientes. En la gran olla de barro, los granos de mote blanco y las papas nativas se cocinan al vapor, inundando la cocina con un aroma ancestral. Al emplatar, corona la preparación con un huevo duro y una generosa rebanada de queso criollo frito que se derrite lentamente. Los comensales se reúnen alrededor de la mesa, mezclando cada bocado con una cucharada de llajua picante que despierta los sentidos. Esta herencia de los arrieros andinos transforma ingredientes simples en un festín dorado que celebra la resistencia y el sabor del altiplano boliviano.
+</p>
+
+</section>
+<section id="cochabamba" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Pique Macho</h1>
+
+<div class="fotos">
+    <img src="jpg/pique_macho.jpeg" class="foto">
+    <img src="jpg/pique_macho.jpeg" class="foto">
+</div>
+
+<h2>🎥 Video de preparación</h2>
+
+<video controls>
+    <source src="mp4/vudeo  pique macho.mp4" type="video/mp4">
+</video>
+
+<h2>🥩 Ingredientes</h2>
+
+<div class="">
+
+<div>- Salchicha o chorizo</div>
+<div>- 1 arroba de Papa</div>
+<div>- Carne de Res</div>
+<div>- 3 o 2 Huevos</div>
+<div>- 1 Queso entero</div>
+<div>- 3 tomates</div>
+<div>- 1 cebolla</div>
+<div>- locoto picado en rodajas</div>
+<div>- Pimienta</div>
+<div>- Aji</div>
+<div>- Sal</div>
+<div>- Salsa soya</div>
+<div>- Mostaza</div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+1. PREPARACION DE DE LA CARNE : Se debe cortar la carne de res en cubos pequeños de tamaño bocado, una ves cortado se debe marinar o sasonar en un recipiente con el ajo molido, comino, la pimienta, la salsa soya y la sal al gusto 
+<br><br>
+2. PREPARACION DE LA PAPA : Como segundo paso paso lavamos la papa y procedemos a pelarla, una vez acabdo de pelar la papa se debe cortar en forma de bastones no tan gruesos ni tan delagados, una vez hecho eso una sarten honda colocaruna cantidad de aceite mediana para que las papas se dores y salgan crocantes. se recomienda ver el paso 3 primero  
+<br><br>
+3. PREPARACION DE LA SALCHICHA O CHORIZO : Se debe cortar la salchicha o chorizo en un corte diagonal no debe de ser delgado debe tener un grosor tipo bocado se debe dorar en una sarten, dejarlo a fuego medio para que se dore ligeramente, es recomendable hacer el paso 3 al mismo tiempo que el paso 2<br><br>
+
+4. COCCION DE LA CARNE DE RES : En una sarten hechar un choro de aceite y posterior a eso colocar la carne que se dejo marinando con las especias, cellas la carne para que no se escape el juego y el sabor, una vez que la carne suelte su jugo agregar la salchicha dorada y dejar cocer por 5minutos.<br><br>
+
+5. PREPARACION DE LOS HUEVOS Y EL QUESO : En una holla se debe llenar de agua hasta la mitad y se debe colocar los huevos con su cascara, se debe dejar herbir por almenos 10mn. , se debe de labar muy bien el queso y cortar en forma vertical <br><br>
+
+6. EMPLATADO : En un plato colocar primero las papas rodadas luego se debe colocar la preparacion que hizimos de la carne y lo decoramos con queso y rodasjas de tomate y tambien el huevo y como no unas rodajas de locoto y cebolla
+
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+El pique macho nació en Cochabamba, Bolivia, en la década de 1970 en el restaurante de Honorato Quiñones y Evangelina Rojas.Una noche, un grupo de pilotos llegó al local de madrugada buscando algo de comer cuando la cocina ya estaba cerrada. Doña Evangelina, usando lo último que le quedaba en la despensa, picó y mezcló carne, salchichas, papas fritas y abundante locoto picante.Al verlos sudar por el picor, los dueños los desafiaron diciendo: "Piquen si son machos". El plato fue un éxito rotundo y el nombre se quedó para siempre, convirtiéndose en un ícono de la comida boliviana.
+
+</p>
+
+</section>
+<section id="santacruz" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Masaco de platano</h1>
+
+<div class="fotos">
+    <img src="jpg/masaco1.jpg" class="foto">
+    <img src="jpg/masaco2.jpg" class="foto">
+    <img src="jpg/masaco3.jpg" class="foto">
+</div>
+
+<h2>🎥 Video de preparación</h2>
+
+<video controls>
+    <source src="mp4/video del masaco.mp4" type="video/mp4">
+</video>
+
+<h2>🥩 Ingredientes</h2>
+<div class="fotos">
+    <img src="" class="foto">
+    <img src="" class="foto">
+    <img src="" class="foto">
+</div>
+
+<div class="">
+
+<div>4 plátanos verdes.</div>
+<div>1 cebolla.</div>
+<div>2 cucharadas de aceite </div>
+<div>Sal al gusto.</div>
+<div>Agua, cantidad necesaria.</div>
+<div>1 queso</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+LAVAR Y PREPARAR LOS INGREDIENTES: Primero debemos lavar los plátanos y la carne. Luego pelamos los plátanos y cortamos la carne en trozos pequeños para facilitar su preparación.<br><br>
+PREPARAR LOS PLÁTANOS: Pelamos los plátanos verdes y los cortamos en trozos medianos. Luego los cocinamos o freímos hasta que estén blandos y puedan ser machacados fácilmente.<br><br>
+MACHACAR LOS PLÁTANOS: Colocamos los plátanos cocidos o fritos en un recipiente y los machacamos con un utensilio hasta obtener una mezcla uniforme. Agregamos un poco de sal al gusto.<br><br>
+MEZCLAR LOS INGREDIENTES: fritamos los plátanos machacados. <br><br>
+DAR FORMA Y SERVIR: Finalmente, formamos el masaco en porciones y lo servimos caliente. Podemos acompañarlo con otros alimentos según la preparación tradicional de la región. <br><br>
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+En las cálidas tierras de Santa Cruz, el aroma del charque tostado anuncia que el majadito cruceño está listo para cobrar vida en el perol. El arroz se tiñe de un dorado brillante gracias al urucú, mezclándose con el plátano de freír maduro que aporta su dulzura tropical. Sobre esta base perfecta, se acomoda un huevo frito de yema blanda y una porción de carne perfectamente machacada y crujiente. Cada cucharada combina la textura suave del grano con el toque crujiente y saladito de la res, creando una fiesta de sabores orientales. Es el alma de la gastronomía del oriente boliviano, un plato generoso que une a las familias en cada rincón del camba.
+</p>
+
+</section>
+<section id="beni" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Majadito beniano</h1>
+
+<img src="jpg/charquekan.jpg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<video controls>
+    <source src="mp4/video charquekan.mp4" type="video/mp4">
+</video>
+
+<h2>🥩 Ingredientes</h2>
+
+<div class="">
+
+<div>4 plátanos verdes.</div>
+<div>1 cebolla.</div>
+<div>2 cucharadas de aceite </div>
+<div>Sal al gusto.</div>
+<div>Agua, cantidad necesaria.</div>
+<div>1 queso</div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+LAVAR Y PREPARAR LOS INGREDIENTES: Primero debemos lavar los plátanos y la carne. Luego pelamos los plátanos y cortamos la carne en trozos pequeños para facilitar su preparación.<br><br>
+PREPARAR LOS PLÁTANOS: Pelamos los plátanos verdes y los cortamos en trozos medianos. Luego los cocinamos o freímos hasta que estén blandos y puedan ser machacados fácilmente.<br><br>
+MACHACAR LOS PLÁTANOS: Colocamos los plátanos cocidos o fritos en un recipiente y los machacamos con un utensilio hasta obtener una mezcla uniforme. Agregamos un poco de sal al gusto.<br><br>
+MEZCLAR LOS INGREDIENTES: fritamos los plátanos machacados. <br><br>
+DAR FORMA Y SERVIR: Finalmente, formamos el masaco en porciones y lo servimos caliente. Podemos acompañarlo con otros alimentos según la preparación tradicional de la región. <br><br>                                                                 
+
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+El charquekan es un plato tradicional de Oruro preparado principalmente con charque de llama. Es parte de la gastronomía tradicional del departamento y se caracteriza por combinar carne deshidratada con papa, mote, huevo y queso.
+
+</p>
+
+</section>
+<section id="pando" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Charquekan</h1>
+
+<img src="jpg/charquekan.jpg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<video controls>
+    <source src="mp4/video charquekan.mp4" type="video/mp4">
+</video>
+
+<h2>🥩 Ingredientes</h2>
+
+<div class="">
+
+<div>Charque de llama</div>
+<div>Papa</div>
+<div>Mote</div>
+<div>Huevo</div>
+<div>Queso</div>
+<div>Sal</div>
+<div>Aceite</div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+1. Lavar y preparar el charque.<br><br>
+
+2. Cocinar el charque hasta que esté suave.<br><br>
+
+3. Desmenuzar y freír el charque.<br><br>
+
+4. Cocinar las papas y el mote.<br><br>
+
+5. Preparar los huevos y el queso.<br><br>
+
+6. Servir todos los ingredientes juntos.
+
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+El charquekan es un plato tradicional de Oruro preparado principalmente con charque de llama. Es parte de la gastronomía tradicional del departamento y se caracteriza por combinar carne deshidratada con papa, mote, huevo y queso.
+
+</p>
+
+</section>
+<section id="tarija" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Saice Tarijeño</h1>
+
+<img src="jpg/saice 1.jpeg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<video controls>
+    <source src="mp4/video saice.mp4" type="video/mp4">
+</video>
+
+<h2>🥩 Ingredientes</h2>
+
+<div class="">
+
+<div>Charque de llama</div>
+<div>Papa</div>
+<div>Mote</div>
+<div>Huevo</div>
+<div>Queso</div>
+<div>Sal</div>
+<div>Aceite</div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+1. Lavar y preparar el charque.<br><br>
+
+2. Cocinar el charque hasta que esté suave.<br><br>
+
+3. Desmenuzar y freír el charque.<br><br>
+
+4. Cocinar las papas y el mote.<br><br>
+
+5. Preparar los huevos y el queso.<br><br>
+
+6. Servir todos los ingredientes juntos.
+
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+El charquekan es un plato tradicional de Oruro preparado principalmente con charque de llama. Es parte de la gastronomía tradicional del departamento y se caracteriza por combinar carne deshidratada con papa, mote, huevo y queso.
+
+</p>
+
+</section>
+<section id="chuquisaca" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Charquekan</h1>
+
+<img src="jpg/charquekan.jpg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<video controls>
+    <source src="mp4/video charquekan.mp4" type="video/mp4">
+</video>
+
+<h2>🥩 Ingredientes</h2>
+
+<div class="">
+
+<div>Charque de llama</div>
+<div>Papa</div>
+<div>Mote</div>
+<div>Huevo</div>
+<div>Queso</div>
+<div>Sal</div>
+<div>Aceite</div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+1. Lavar y preparar el charque.<br><br>
+
+2. Cocinar el charque hasta que esté suave.<br><br>
+
+3. Desmenuzar y freír el charque.<br><br>
+
+4. Cocinar las papas y el mote.<br><br>
+
+5. Preparar los huevos y el queso.<br><br>
+
+6. Servir todos los ingredientes juntos.
+
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+El charquekan es un plato tradicional de Oruro preparado principalmente con charque de llama. Es parte de la gastronomía tradicional del departamento y se caracteriza por combinar carne deshidratada con papa, mote, huevo y queso.
+
+</p>
+
+</section>
+<script src="js/script.js"></script>
+</body>
+</html>
